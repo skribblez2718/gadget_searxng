@@ -1,5 +1,7 @@
 package main
 
+import "log"
+
 func main() {
 	/*
 		- get arguments from command line
@@ -21,5 +23,9 @@ func main() {
 
 	searchResultsURLs := search(host, searchTerm, chromeDpCtx, maxPages)
 
-	writeResults(searchResultsURLs, output)
+	if len(searchResultsURLs) > 0 {
+		writeResults(searchResultsURLs, output)
+	} else {
+		log.Fatalf("%sNo results for your query!%s", RED, RESET)
+	}
 }

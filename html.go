@@ -16,7 +16,7 @@ func checkForMoreResults(chromeDpCtx context.Context, moreResults bool) (context
 	if err := chromedp.Run(
 		chromeDpCtx,
 		chromedp.Evaluate(
-			fmt.Sprintf(`Array.from(document.querySelectorAll('%s')).filter(el => el.innerText.trim() === "Next page") !== []`, MORE_RESULTS_SELECTOR),
+			fmt.Sprintf(`Array.from(document.querySelectorAll('%s')).filter(el => el.innerText.trim() === "Next page").length > 0`, MORE_RESULTS_SELECTOR),
 			&moreResults,
 		),
 	); err != nil {

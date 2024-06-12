@@ -35,7 +35,7 @@ func displayUsage() {
 	usageMessage := "Description:\n"
 	usageMessage += "\tUses ChromeDP to automate extracting URLs from SearxNG search results.\n"
 	usageMessage += "Usage:\n"
-	usageMessage += "\tgadget_searxng --host <searxng_host> --searchTerm \"<search_term>\" --output \"<output_file>\" [--maxPages <int>]\n"
+	usageMessage += "\tgadget_searxng --host \"<searxng_host>\" --searchTerm \"<search_term>\" --output \"<output_file>\" [--maxPages <int>]\n"
 
 	fmt.Print(usageMessage)
 }
