@@ -17,8 +17,6 @@ func getAllocContext(ctx context.Context) (context.Context, context.CancelFunc) 
 			- solving a Captcha quick never hurt anyone; the rest is automated
 	*/
 	return chromedp.NewExecAllocator(ctx, append(chromedp.DefaultExecAllocatorOptions[:],
-		chromedp.Flag("window-size", "1200,800"),
-		chromedp.Flag("headless", false),
 		chromedp.Flag("ignore-certificate-errors", true),
 	)...)
 
